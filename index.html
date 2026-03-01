@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>Tamato</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+    }
+
+    .navbar {
+      padding: 20px;
+      background: #111;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      color: #00ffcc;
+    }
+
+    .hero {
+      margin-top: 100px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00ffcc;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome</h1>
-  <p>This is my personal website.</p>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="hero">
+    <h1>Welcome to Tamato</h1>
+    <p>This is my professional website.</p>
+    <a href="#" class="btn">Explore</a>
+  </div>
+
 </body>
 </html>
