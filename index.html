@@ -1,65 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tamato</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: white;
-      text-align: center;
-    }
+<title>My Game Zone</title>
+<style>
+body{
+background:#0f0f1a;
+color:white;
+font-family:Arial;
+margin:0;
+}
 
-    .navbar {
-      padding: 20px;
-      background: #111;
-    }
+header{
+background:#1c1c2e;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+}
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 18px;
-    }
+.games{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:15px;
+}
 
-    .navbar a:hover {
-      color: #00ffcc;
-    }
+.card{
+background:#1c1c2e;
+border-radius:15px;
+overflow:hidden;
+}
 
-    .hero {
-      margin-top: 100px;
-    }
+.card img{
+width:100%;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #00ffcc;
-      color: black;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: white;
-    }
-  </style>
+.card button{
+width:100%;
+padding:10px;
+background:#7b3fe4;
+border:none;
+color:white;
+font-weight:bold;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="navbar">
-    <a href="about.html">About</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </div>
+<header>🎮 My Game Zone</header>
 
-  <div class="hero">
-    <h1>Welcome to Tamato</h1>
-    <p>This is my professional website.</p>
-    <a href="#" class="btn">Explore</a>
-  </div>
+<div class="games">
+
+<div class="card">
+<img src="https://picsum.photos/300/200">
+<button onclick="alert('Game Coming Soon 😎')">Play</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/301/200">
+<button onclick="alert('Game Coming Soon 😎')">Play</button>
+</div>
+
+</div>
 
 </body>
 </html>
