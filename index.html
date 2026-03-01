@@ -1,64 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Game Zone</title>
+<title>Tomato Games</title>
+
 <style>
 body{
-background:#0f0f1a;
-color:white;
-font-family:Arial;
-margin:0;
+    margin:0;
+    font-family: Arial;
+    background:#0f0f1a;
+    color:white;
 }
 
 header{
-background:#1c1c2e;
-padding:15px;
-font-size:22px;
-font-weight:bold;
+    background:#1c1c2e;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    margin:0;
+    color:#ff4d4d;
 }
 
 .games{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-padding:15px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap:15px;
+    padding:20px;
 }
 
 .card{
-background:#1c1c2e;
-border-radius:15px;
-overflow:hidden;
+    background:#1c1c2e;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
 }
 
-.card img{
-width:100%;
+.card:hover{
+    transform:scale(1.05);
+    background:#29294d;
 }
 
-.card button{
-width:100%;
-padding:10px;
-background:#7b3fe4;
-border:none;
-color:white;
-font-weight:bold;
+button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    background:#ff4d4d;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff1a1a;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<header>🎮 My Game Zone</header>
+<header>
+    <h1>🍅 Tomato Games</h1>
+</header>
 
 <div class="games">
 
 <div class="card">
-<img src="https://picsum.photos/300/200">
-<button onclick="alert('Game Coming Soon 😎')">Play</button>
+    <h3>Game 1</h3>
+    <button onclick="alert('Game Start!')">Play</button>
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/301/200">
-<button onclick="alert('Game Coming Soon 😎')">Play</button>
+    <h3>Game 2</h3>
+    <button onclick="alert('Game Start!')">Play</button>
+</div>
+
+<div class="card">
+    <h3>Game 3</h3>
+    <button onclick="alert('Game Start!')">Play</button>
+</div>
+
+<div class="card">
+    <h3>Game 4</h3>
+    <button onclick="alert('Game Start!')">Play</button>
 </div>
 
 </div>
