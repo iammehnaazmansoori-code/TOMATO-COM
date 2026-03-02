@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Click Speed Game</title>
+<style>
+body{
+    margin:0;
+    background:#0f0f1a;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+button{
+    padding:15px 25px;
+    font-size:20px;
+    background:#ff4d4d;
+    border:none;
+    color:white;
+    border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>Click Speed Game 🎮</h1>
+<p>Click as fast as you can!</p>
+
+<h2 id="score">Score: 0</h2>
+<button onclick="increase()">Click Me</button>
+
+<script>
+let score = 0;
+function increase(){
+    score++;
+    document.getElementById("score").innerText = "Score: " + score;
+}
+</script>
+
+</body>
+</html>
