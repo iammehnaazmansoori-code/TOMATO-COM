@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zombie Escape 3D</title>
+<style>
+  body { margin:0; overflow:hidden; background:#111;}
+  #info {position:absolute; top:10px; left:10px; color:white; font-family:Arial;}
+</style>
+</head>
+<body>
+<div id="info">Use Arrow Keys or WASD to move</div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+
+<script>
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight,0.1,1000);
+let renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Player
+let geometry = new THREE.BoxGeometry(1,1,1);
+let material = new THREE.MeshBasicMaterial({color:0x00ff00});
+let player = new THREE.Mesh(geometry, material);
+scene.add(player);
+player.position.y = 0.5;
+
+// Zombies
+let zombies = [];
+for(let i=0;i<5;i++){
+  let zgeo = new THREE.BoxGeometry(1,1,1);
+  let zmat = new THREE.MeshBasicMaterial({color:0xff0000});
+  let zombie = new THREE.Mesh(zgeo,zmat);
+  zombie.position.set(Math.random()*20-10,0.5,Math.random()*-20);
+  scene.add(zombie);
+  zombies.push(zombie);
+}
+
+// Ground
+let groundGeo = new THREE.PlaneGeometry(50,50);
+let groundMat = new THREE.MeshBasicMaterial({color:0x555555});
+let ground = new THREE.Mesh(groundGeo, groundMat);
+ground.rotation.x = -Math.PI/2;
+scene.add(ground);
+
+// Camera
+camera.position.set(0,5,10);
+camera.lookAt(player.position);
+
+// Controls
+let keys = {};
+document.addEventListener('keydown',(e)=>{keys[e.key.toLowerCase()]=true;});
+document.addEventListener('keyup',(e)=>{keys[e.key.toLowerCase()]=false;});
+
+// Game loop
+function animate(){
+  requestAnimationFrame(animate);
+  
+  // Player movement
+  if(keys['arrowup'] || keys['w']) player.position.z -=0.2;
+  if(keys['arrowdown'] || keys['s']) player.position.z +=0.2;
+  if(keys['arrowleft'] || keys['a']) player.position.x -=0.2;
+  if(keys['arrowright'] || keys['d']) player.position.x +=0.2;
+  
+  // Zombies follow player
+  zombies.forEach(z=>{
+    let dx = player.position.x - z.position.x;
+    let dz = player.position.z - z.position.z;
+    let dist = Math.sqrt(dx*dx + dz*dz);
+    z.position.x += 0.01*dx/dist;
+    z.position.z += 0.01*dz/dist;
+  });
+  
+  camera.position.x = player.position.x;
+  camera.position.z = player.position.z + 10;
+  camera.lookAt(player.position);
+  
+  renderer.render(scene,camera);
+}
+
+animate();
+</script>
+</body>
+</html>
