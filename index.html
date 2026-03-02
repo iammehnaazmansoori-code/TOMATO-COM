@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tomato Games</title>
-
-<<head>
+  <meta charset="UTF-8">
   <title>Tomato Games</title>
   <style>
+    /* Body & general style */
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0f0f1a;
+      color:white;
+      padding-top:160px; /* Taaki banner ke neeche content aaye */
+    }
+
+    /* Banner style */
     #banner{
       position:absolute;
       top:0;
@@ -30,105 +38,96 @@
       font-family: 'Arial Black', sans-serif;
       font-size:32px;
       text-shadow: 2px 2px 5px black;
+      margin:0;
     }
 
-    body{
-      padding-top:160px; /* Taaki banner 3D scene ke upar na chhup jaye */
+    /* Header style */
+    header{
+      background:#1c1c2e;
+      padding:15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    header h1{
+      margin:0;
+      color:#ff4d4d;
+    }
+
+    /* Games grid */
+    .games{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+      gap:15px;
+      padding:20px;
+    }
+
+    .card{
+      background:#1c1c2e;
+      padding:20px;
+      border-radius:15px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:scale(1.05);
+      background:#29294d;
+    }
+
+    button{
+      margin-top:10px;
+      padding:8px 15px;
+      border:none;
+      background:#ff4d4d;
+      color:white;
+      border-radius:20px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#ff1a1a;
     }
   </style>
-</head>>
+</head>
 <body>
+
+  <!-- Banner -->
   <div id="banner">
     <img src="https://i.imgur.com/yourimage.png" alt="Tomato Games Banner" />
     <h1>🍅 Tomato Games</h1>
   </div>
 
-  <!-- Baaki ka content ya game cards yahan -->
-</body>{
-    margin:0;
-    font-family: Arial;
-    background:#0f0f1a;
-    color:white;
-}
-
-header{
-    background:#1c1c2e;
-    padding:15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-header h1{
-    margin:0;
-    color:#ff4d4d;
-}
-
-.games{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-    gap:15px;
-    padding:20px;
-}
-
-.card{
-    background:#1c1c2e;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:scale(1.05);
-    background:#29294d;
-}
-
-button{
-    margin-top:10px;
-    padding:8px 15px;
-    border:none;
-    background:#ff4d4d;
-    color:white;
-    border-radius:20px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#ff1a1a;
-}
-</style>
-
-</head>
-<body>
-
-<header>
+  <!-- Header (optional, can remove if banner enough) -->
+  <header>
     <h1>🍅 Tomato Games</h1>
-</header>
+  </header>
 
-<div class="games">
+  <!-- Game cards -->
+  <div class="games">
 
-<div class="card">
-    <h3>Game 1</h3>
-    <button onclick="location.href='zombie_game.html'">Play</button>
-</div>
+    <div class="card">
+      <h3>Game 1</h3>
+      <button onclick="location.href='zombie_game.html'">Play</button>
+    </div>
 
-<div class="card">
-    <h3>Game 2</h3>
-    <button onclick="alert('Game Start!')">Play</button>
-</div>
+    <div class="card">
+      <h3>Game 2</h3>
+      <button onclick="alert('Game Start!')">Play</button>
+    </div>
 
-<div class="card">
-    <h3>Game 3</h3>
-    <button onclick="alert('Game Start!')">Play</button>
-</div>
+    <div class="card">
+      <h3>Game 3</h3>
+      <button onclick="alert('Game Start!')">Play</button>
+    </div>
 
-<div class="card">
-    <h3>Game 4</h3>
-    <button onclick="alert('Game Start!')">Play</button>
-</div>
+    <div class="card">
+      <h3>Game 4</h3>
+      <button onclick="alert('Game Start!')">Play</button>
+    </div>
 
-</div>
+  </div>
 
 </body>
 </html>
